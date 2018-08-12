@@ -61,6 +61,11 @@ release :
 	else \
 		make test $(ARG) || exit $? ;\
 		make dist $(ARG) || exit $? ;\
+		git tag $(ARG)-$(PACKAGE_VERSION) || exit $? ;\
+		git push --tags || exit $? ;\
+		cd $(PACKAGE) || exit $? ;\
+		npm publish || exit $? ;\
+		cd ../../ || exit $? ;\
 		([ $$? -eq 0 ] && echo "✓ Released $(ARG)-$(PACKAGE_VERSION)" || exit 1) ;\
 	fi
 
