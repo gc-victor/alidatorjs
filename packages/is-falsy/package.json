@@ -3,7 +3,6 @@
     "version": "1.0.0",
     "description": "Tiny function to validate if a value is falsy",
     "author": "Víctor García",
-    "private": true,
     "repository": {
         "type": "git",
         "url": "https://github.com/gc-victor/alidatorjs/tree/master/packages/is-falsy"
