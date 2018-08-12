@@ -1,0 +1,28 @@
+{
+    "name": "@alidatorjs/is-less-than",
+    "version": "1.0.0",
+    "description": "Tiny function to validate if a value is less than other",
+    "author": "Víctor García",
+    "private": true,
+    "keywords": [
+        "alidator",
+        "validator",
+        "validation",
+        "javascript",
+        "library"
+    ],
+    "main": "dist/is-less-than.js",
+    "umd:main": "dist/is-less-than.umd.js",
+    "module": "dist/is-less-than.m.js",
+    "source": "is-less-than.js",
+    "typings": "is-less-than.d.ts",
+    "types": "is-less-than.d.ts",
+    "directories": {
+        "example": "../../examples"
+    },
+    "scripts": {
+        "test": "../../node_modules/.bin/tap -J --node-arg=-r --node-arg=esm *.test.js",
+        "test:progress": "yarn test --reporter=progress",
+        "test:watch": "yarn test:progress && ../../node_modules/.bin/chokidar './*.js' -c 'yarn test:progress'"
+    }
+}

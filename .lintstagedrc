@@ -1,0 +1,7 @@
+{
+    "*.js": [
+        "make test-all",
+        "make format-all",
+        "make lint-all"
+    ]
+}

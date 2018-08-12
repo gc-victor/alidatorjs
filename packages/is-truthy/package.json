@@ -1,0 +1,28 @@
+{
+    "name": "@alidatorjs/is-truthy",
+    "version": "1.0.0",
+    "description": "Tiny function to validate if a value is truthy",
+    "author": "Víctor García",
+    "private": true,
+    "keywords": [
+        "alidator",
+        "validator",
+        "validation",
+        "javascript",
+        "library"
+    ],
+    "main": "dist/is-truthy.js",
+    "umd:main": "dist/is-truthy.umd.js",
+    "module": "dist/is-truthy.m.js",
+    "source": "is-truthy.js",
+    "typings": "is-truthy.d.ts",
+    "types": "is-truthy.d.ts",
+    "directories": {
+        "example": "../../examples"
+    },
+    "scripts": {
+        "test": "../../node_modules/.bin/tap -J --node-arg=-r --node-arg=esm *.test.js",
+        "test:progress": "yarn test --reporter=progress",
+        "test:watch": "yarn test:progress && ../../node_modules/.bin/chokidar './*.js' -c 'yarn test:progress'"
+    }
+}
