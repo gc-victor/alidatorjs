@@ -37,7 +37,7 @@ const isValid = validator([
     isTruthy(0),
     isTruthy(NaN),
     isTruthy(''),
-]).every; // true
+]).every; // false
 
 const errors = validator([
     [isTruthy(true), () => 'message'],
