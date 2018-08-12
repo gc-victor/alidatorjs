@@ -43,4 +43,4 @@ const errors = validator([
 
 ## License
 
-[MIT License]((https://github.com/gc-victor/alidatorjs/blob/master/LICENSE.md))
+[MIT License](https://github.com/gc-victor/alidatorjs/blob/master/LICENSE.md)

@@ -55,4 +55,4 @@ Pull requests are the greatest contributions, so be sure they are focused in sco
 
 ## License
 
-[MIT License]((https://github.com/gc-victor/alidatorjs/blob/master/LICENSE.md))
+[MIT License](https://github.com/gc-victor/alidatorjs/blob/master/LICENSE.md)
