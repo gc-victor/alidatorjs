@@ -2,6 +2,10 @@
 
 Tiny function, compatible with Alidator.js, to validate if a value is greater than other.
 
+[![npm](https://img.shields.io/npm/v/@alidatorjs/is-greater-than.svg)](http://npm.im/@alidatorjs/is-greater-than)
+[![license](https://img.shields.io/npm/l/@alidatorjs/is-greater-than.svg)](https://github.com/gc-victor/alidatorjs/blob/master/LICENSE.md)
+[![gzip size](http://img.badgesize.io/https://unpkg.com/@alidatorjs/is-greater-than?compression=gzip)](https://unpkg.com/@alidatorjs/is-greater-than)
+
 ## Install
 
 You can use npm or yarn to install it.

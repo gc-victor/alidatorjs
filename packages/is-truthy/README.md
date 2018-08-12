@@ -2,6 +2,10 @@
 
 Tiny function, compatible with Alidator.js, to validate if a value is truthy.
 
+[![npm](https://img.shields.io/npm/v/@alidatorjs/is-truthy.svg)](http://npm.im/@alidatorjs/is-truthy)
+[![license](https://img.shields.io/npm/l/@alidatorjs/is-truthy.svg)](https://github.com/gc-victor/alidatorjs/blob/master/LICENSE.md)
+[![gzip size](http://img.badgesize.io/https://unpkg.com/@alidatorjs/is-truthy?compression=gzip)](https://unpkg.com/@alidatorjs/is-truthy)
+
 ## Install
 
 You can use npm or yarn to install it.

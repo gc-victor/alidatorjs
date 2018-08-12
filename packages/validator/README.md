@@ -1,6 +1,10 @@
 # Validator
 
-Tiny modular validator in 135 bytes gzipped.
+Tiny modular validator.
+
+[![npm](https://img.shields.io/npm/v/@alidatorjs/validator.svg)](http://npm.im/@alidatorjs/validator)
+[![license](https://img.shields.io/npm/l/@alidatorjs/validator.svg)](https://github.com/gc-victor/alidatorjs/blob/master/LICENSE.md)
+[![gzip size](http://img.badgesize.io/https://unpkg.com/@alidatorjs/validator?compression=gzip)](https://unpkg.com/@alidatorjs/validator)
 
 ## Install
 
