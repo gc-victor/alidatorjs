@@ -12,9 +12,10 @@ help :
 	@echo "  make dist\t\t\tbuild everything"
 	@echo "  make dist <package>\t\tbuild dist for <package> only (e.g. 'make dist validator')"
 	@echo "  make example\t\t\texecute examples"
+	@echo "  make release <package>\texecute release <package>"
 	@echo "  make test\t\t\ttest everything"
 	@echo "  make test <package>\t\ttest just <package>  (e.g. 'make test validator')"
-	@echo "  make test:watch <package>\t\ttest just <package>  (e.g. 'make test:watch validator')"
+	@echo "  make test:watch <package>\ttest just <package>  (e.g. 'make test:watch validator')"
 	@echo ""
 
 dist :
@@ -60,8 +61,7 @@ release :
 	else \
 		make test $(ARG) || exit $? ;\
 		make dist $(ARG) || exit $? ;\
-		echo "$(ARG)-$(PACKAGE_VERSION)" || exit $? ;\
-		([ $$? -eq 0 ] && echo "✓ Released $(PACKAGE)" || exit 1) ;\
+		([ $$? -eq 0 ] && echo "✓ Released $(ARG)-$(PACKAGE_VERSION)" || exit 1) ;\
 	fi
 
 test :
