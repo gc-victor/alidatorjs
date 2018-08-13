@@ -1,7 +1,7 @@
 {
     "name": "@alidatorjs/validator",
     "version": "1.0.0",
-    "description": "Tiny chainable modular validator in 174 bytes gzipped.",
+    "description": "Tiny modular validator",
     "author": "Víctor García",
     "repository": {
         "type": "git",
