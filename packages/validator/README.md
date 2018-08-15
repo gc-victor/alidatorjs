@@ -68,6 +68,18 @@ const errors = validator([
     [isFalsy(NaN), () => 'message'],
 ]).errors; // ['Error 1', 'Error 2']
 ```
+
+### Successes
+
+Is the way to define a success action if the condition is true
+
+```
+validator([
+    [isTruthy(true), () => 'Success 1'],
+    [isTruthy(false), () => {}],
+    [isTruthy(true), () => 'Success 2'],
+    [isTruthy(false), () => {}],
+]).successes; // ['Success 1', 'Success 2']
 ``` 
 
 ### Create a validation
