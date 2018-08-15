@@ -12,4 +12,4 @@ cache:
     - "node_modules"
 
 script:
-  - make -j dist
+  - make -j dist-all
