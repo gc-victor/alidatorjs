@@ -26,11 +26,11 @@ var { validator }  = require('@alidatorjs/validator')
 
 ## Usage
 
-### Validation
+You can choose between validate every error or some of the errors, and receive a boolean, or validate the errors or the successes, and receive an array the value defined by you.
 
-Is as easy as define an array with the validations, and specify if is needed to validate *every* or *some* of the values
+### Every
 
-#### Every
+Is as easy as define an array with the validations, and specify if is needed to validate *every* of the values
 
 ```
 import { validator } from '@alidatorjs/validator';
@@ -47,7 +47,9 @@ const isValid = validator([
 ]).every; // true
 ```
 
-#### Some
+### Some
+
+Is as easy as define an array with the validations, and specify if is needed to validate *some* of the values
 
 ```
 const isValid = validator([ isGreaterThan(1, 0), isTruthy(true) ]).some; // true
@@ -64,7 +66,8 @@ const errors = validator([
     [isFalsy('tralala'), () => 'Error 2'],
     [isFalsy(0), () => 'message'],
     [isFalsy(NaN), () => 'message'],
-]).errors, // ['Error 1', 'Error 2']
+]).errors; // ['Error 1', 'Error 2']
+```
 ``` 
 
 ### Create a validation
