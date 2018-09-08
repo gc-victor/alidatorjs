@@ -74,7 +74,7 @@ const errors = validator([
 Is the way to define a success action if the condition is true
 
 ```
-validator([
+const successes = validator([
     [isTruthy(true), () => 'Success 1'],
     [isTruthy(false), () => {}],
     [isTruthy(true), () => 'Success 2'],
