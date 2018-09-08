@@ -1,11 +1,11 @@
 export function validator(validators) {
     return {
         get every() {
-            return validators.every(condition => condition);
+            return validators.every(Boolean);
         },
 
         get some() {
-            return validators.some(condition => condition);
+            return validators.some(Boolean);
         },
 
         get errors() {
