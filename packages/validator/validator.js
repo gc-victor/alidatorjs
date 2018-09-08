@@ -9,11 +9,11 @@ export function validator(validators) {
         },
 
         get errors() {
-            return validators.filter(arr => !arr[0]).map(arr => arr[1]());
+            return validators.reduce((acc, cur) => (cur[0] ? acc : acc.concat(cur[1]())), []);
         },
 
         get successes() {
-            return validators.filter(arr => arr[0]).map(arr => arr[1]());
+            return validators.reduce((acc, cur) => (cur[0] ? acc.concat(cur[1]()) : acc), []);
         },
     };
 }
