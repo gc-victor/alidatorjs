@@ -1,6 +1,6 @@
 interface Validations {
     errors?: Array<any>;
-    success?: Array<any>;
+    successes?: Array<any>;
     every?: boolean;
     some?: boolean;
 }
