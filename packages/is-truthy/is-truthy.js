@@ -1,1 +1,1 @@
-export const isTruthy = value => !!value;
+export const isTruthy = (value) => Boolean(value);

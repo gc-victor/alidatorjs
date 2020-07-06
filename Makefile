@@ -1,7 +1,3 @@
-BINDIR=node_modules/.bin
-MICROBUNDLE=$(BINDIR)/microbundle
-ESLINT=$(BINDIR)/eslint
-
 ARG=$(filter-out $@,$(MAKECMDGOALS))
 PACKAGE=packages/$(ARG)
 PACKAGE_VERSION=$(shell node -p -e 'require("./$(PACKAGE)/package.json").version')
@@ -19,24 +15,24 @@ help :
 	@echo "  make test:watch <package>\ttest just <package>  (e.g. 'make test:watch validator')"
 	@echo ""
 
-dist :
+build :
 	@if [ "$(ARG)" = "" ]; then \
 		echo "Error: please call 'make dist' with an argument, like 'make dist validator'" ;\
 	else \
 		rm -rf $(PACKAGE)/dist/ ;\
 		cd $(PACKAGE) || exit $? ;\
-		../../$(MICROBUNDLE) build -i index.js --name $(PACKAGE) || exit $? ; \
+		npx microbundle build -i index.js --name $(PACKAGE) || exit $? ; \
 		cd ../../ || exit $? ; \
 		([ $$? -eq 0 ] && echo "✓ Builded $(ARG) distribution files" || exit 1) ;\
 	fi
 
-dist-all :
+build-all :
 	@if [ "$(ARG)" = "" ]; then \
-		make format-all ; \
+		make format-all || exit $? ;\
+		make test-all || exit $? ;\
 		while read d ; do \
 			echo "Compiling $$d" ; \
-			make test $$d || exit $? ;\
-			make dist $$d || exit $? ;\
+			make build $$d || exit $? ;\
 		done < .scripts/PACKAGES ; \
 		([ $$? -eq 0 ] && echo "✓ Builded $$d distribution files" || exit 1) ;\
 	fi
@@ -48,7 +44,7 @@ format :
 	@if [ "$(ARG)" = "" ]; then \
 		echo "Error: please call 'make format' with an argument, like 'make format validator'" ;\
 	else \
-		$(BINDIR)/prettier --write "packages/$(ARG)/*.js" ;\
+		npx prettier --write "packages/$(ARG)/*.js" ;\
 	fi
 
 format-all :
@@ -56,17 +52,6 @@ format-all :
 	@while read d ; do \
 		make format $$d ;\
 	done < .scripts/PACKAGES
-
-lint :
-	@if [ "$(ARG)" = "" ]; then \
-		make lint-all ;\
-	else \
-		cd $(PACKAGE) && ../../$(ESLINT) --fix *.js;\
-		echo "✓ ESLint $(PACKAGE) passed" ;\
-	fi
-
-lint-all :
-	.scripts/lint-all.sh
 
 release :
 	@if [ "$(ARG)" = "" ]; then \
@@ -119,15 +104,11 @@ test :
 		([ $$? -eq 0 ] && echo "✓ Tested $(PACKAGE)" || exit 1) ;\
 	fi
 
-test-watch :
-	@if [ "$(ARG)" = "" ]; then \
-		echo "Error: No package defined" ;\
-	else \
-		cd $(PACKAGE) && npm run test:watch && ([ $$? -eq 0 ] && echo "✓ Tested $(PACKAGE)") || exit 1;\
-	fi
-
 test-all :
 	.scripts/test-all.sh
+
+test-watch :
+	npx chokidar-cli "**/*.js" -c "make test" || exit $? ;\
 
 # catch anything and do nothing
 %:

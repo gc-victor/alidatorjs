@@ -1,37 +1,30 @@
 {
-    "name": "alidatorjs",
-    "author": "Víctor García",
-    "description": "Tiny modular validator",
-    "bugs": {
-        "url": "https://github.com/gc-victor/alidatorjs/issues"
-    },
-    "homepage": "https://github.com/gc-victor/alidatorjs",
-    "private": true,
-    "keywords": [
-        "validator",
-        "validation",
-        "javascript",
-        "library"
-    ],
-    "workspaces": [
-        "packages/*"
-    ],
-    "devDependencies": {
-        "chokidar-cli": "1.2.0",
-        "eslint": "5.3.0",
-        "esm": "3.0.74",
-        "husky": "0.14.3",
-        "lint-staged": "7.2.0",
-        "microbundle": "0.6.0",
-        "prettier": "1.14.0",
-        "proxyquire": "2.0.1",
-        "tap": "12.0.1"
-    },
-    "scripts": {
-        "build": "make -j dist",
-        "example": "node -r esm examples.js",
-        "precommit": "lint-staged",
-        "test": "make -j test-all"
-    },
-    "license": "MIT"
+  "name": "alidatorjs",
+  "author": "Víctor García",
+  "description": "Tiny modular validator",
+  "bugs": {
+    "url": "https://github.com/gc-victor/alidatorjs/issues"
+  },
+  "homepage": "https://github.com/gc-victor/alidatorjs",
+  "private": true,
+  "keywords": [
+    "validator",
+    "validation",
+    "javascript",
+    "library"
+  ],
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "esm": "3.2.25",
+    "prettier": "2.0.5",
+    "t-t": "git+https://github.com/gc-victor/t-t.git#4186d5a"
+  },
+  "scripts": {
+    "build": "make -j dist",
+    "example": "node -r esm examples.js",
+    "test": "make -j test-all"
+  },
+  "license": "MIT"
 }

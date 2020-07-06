@@ -21,15 +21,11 @@
     "main": "dist/is-falsy.js",
     "umd:main": "dist/is-falsy.umd.js",
     "module": "dist/is-falsy.m.js",
+    "esmodule": "dist/is-falsy.modern.js",
     "source": "is-falsy.js",
     "typings": "is-falsy.d.ts",
     "types": "is-falsy.d.ts",
-    "directories": {
-        "example": "../../examples"
-    },
     "scripts": {
-        "test": "../../node_modules/.bin/tap -J --node-arg=-r --node-arg=esm *.test.js",
-        "test:progress": "yarn test --reporter=progress",
-        "test:watch": "yarn test:progress && ../../node_modules/.bin/chokidar './*.js' -c 'yarn test:progress'"
+        "test": " node -r esm *.test.js"
     }
 }

@@ -21,16 +21,11 @@
     "main": "dist/validator.js",
     "umd:main": "dist/validator.umd.js",
     "module": "dist/validator.m.js",
+    "esmodule": "dist/validator.modern.js",
     "source": "validator.js",
     "typings": "index.d.ts",
     "types": "index.d.ts",
-    "directories": {
-        "example": "../../examples",
-        "test": "./tests"
-    },
     "scripts": {
-        "test": "../../node_modules/.bin/tap -J --node-arg=-r --node-arg=esm *.test.js",
-        "test:progress": "yarn test --reporter=progress",
-        "test:watch": "yarn test:progress && ../../node_modules/.bin/chokidar './*.js' -c 'yarn test:progress'"
+        "test": " node -r esm *.test.js"
     }
 }
